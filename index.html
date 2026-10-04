@@ -1,218 +1,82 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MWONGE ELECTRONICS</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css" />
-    <style>
-      .glass {
-        background: rgba(255, 255, 255, 0.06);
-        backdrop-filter: blur(16px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      .modal {
-        display: none;
-      }
-      .modal:target {
-        display: flex;
-      }
-      #cart {
-        transform: translateX(100%);
-        transition: 0.3s ease;
-      }
-      #cart:target {
-        transform: translateX(0);
-      }
-    </style>
-  </head>
-  <body class="bg-[#111111] text-white">
-    <!-- NAV SECTION - Flex layout -->
-    <nav
-      class="glass sticky top-0 z-30 flex justify-between items-center px-8 py-4 m-4 rounded-full"
-    >
-      <div class="font-black text-xl">
-        MWONGE <span class="text-blue-500">.</span>
-      </div>
-      <div class="flex gap-6 text-sm">
-        <a href="#grid">PRODUCTS</a
-        ><a
-          href="#cart"
-          class="bg-white text-black px-4 py-1.5 rounded-full font-bold"
-          >CART (2)</a
-        >
-      </div>
-    </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MWONGE ELECTRONICS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-[#111111] text-white">
 
-    <!-- HEADER SECTION -->
-    <header class="px-10 py-16">
-      <h1 class="text-7xl font-black leading-none">
-        Essential<br /><span class="text-neutral-500">Tech.</span>
-      </h1>
-      <p class="mt-4 text-neutral-400 max-w-lg">
-        Curated gadgets for work, sound and creation. Minimal design, powerful
-        performance.
-      </p>
-    </header>
+  <!-- NAV - Flex layout, glass as secondary theme -->
+  <nav class="glass sticky top-0 z-30 flex justify-between items-center px-8 py-4 m-4 rounded-full">
+    <div class="font-black text-xl">MWONGE <span class="text-blue-500">.</span></div>
+    <div class="flex gap-6 text-sm items-center">
+      <a href="#grid" class="hover:text-blue-400 transition">PRODUCTS</a>
+      <a href="#cart" class="bg-white text-black px-4 py-1.5 rounded-full font-bold hover:bg-blue-500 hover:text-white transition">CART (2)</a>
+    </div>
+  </nav>
 
-    <!-- PRODUCT GRID - CSS GRID -->
-    <main id="grid" class="grid grid-cols-1 md:grid-cols-3 gap-5 p-10">
-      <!-- PRODUCT 1 -->
-      <a
-        href="#m1"
-        class="bg-[#1a1a1a] rounded-[20px] p-3 border border-white/5 hover:border-white/20 transition"
-        ><img
-          src="images/headphones.jpg"
-          class="w-full h-64 object-cover rounded-[14px]"
-        />
-        <div class="p-3">
-          <h2 class="font-bold">Studio Pro Headphones</h2>
-          <p class="text-sm text-neutral-400 mt-1">Noise Cancelling • 40hr</p>
-          <div class="flex justify-between mt-3">
-            <span class="font-bold">20,000KSH</span
-            ><span class="text-xs bg-white text-black px-3 py-1 rounded-full"
-              >4.9 &#9733;&#9733;&#9733;&#9733;&#9733;</span
-            >
-          </div>
-        </div></a
-      >
+  <!-- HEADER - Typography hierarchy -->
+  <header class="px-10 py-16">
+    <p class="text-xs tracking-[0.2em] text-neutral-500 uppercase">EST. 2026 • NAIROBI</p>
+    <h1 class="text-7xl font-black leading-[0.9] mt-2">Essential<br><span class="text-neutral-500">Tech.</span></h1>
+    <p class="mt-4 text-neutral-400 max-w-lg leading-relaxed">Curated gadgets for work, sound and creation. Minimal design, powerful performance.</p>
+  </header>
 
-      <!-- PRODUCT 2 -->
-      <a
-        href="#m2"
-        class="bg-[#1a1a1a] rounded-[20px] p-3 border border-white/5 hover:border-white/20 transition"
-        ><img
-          src="images/watch.jpg"
-          class="w-full h-64 object-cover rounded-[14px]"
-        />
-        <div class="p-3">
-          <h2 class="font-bold">Digital Watch Series</h2>
-          <p class="text-sm text-neutral-400 mt-1">Fitness • 7 Day Battery</p>
-          <div class="flex justify-between mt-3">
-            <span class="font-bold">15,000KSH</span
-            ><span class="text-xs bg-white text-black px-3 py-1 rounded-full"
-              >4.7 &#9733;&#9733;&#9733;&#9733;&#9734;</span
-            >
-          </div>
-        </div></a
-      >
-      <!-- PRODUCT 3 -->
-      <a
-        href="#m3"
-        class="bg-[#1a1a1a] rounded-[20px] p-3 border border-white/5 hover:border-white/20 transition"
-        ><img
-          src="images/laptop.jpg"
-          class="w-full h-64 object-cover rounded-[14px]"
-        />
-        <div class="p-3">
-          <h2 class="font-bold">Hp Elitebook 840</h2>
-          <p class="text-sm text-neutral-400 mt-1">i7 • 16GB • 512GB SSD</p>
-          <div class="flex justify-between mt-3">
-            <span class="font-bold">65,000KSH</span
-            ><span class="text-xs bg-white text-black px-3 py-1 rounded-full"
-              >4.8 &#9733;&#9733;&#9733;&#9733;&#9733;</span
-            >
-          </div>
-        </div></a
-      >
+  <!-- FILTER / SORT UI - UI ONLY, NO JS -->
+  <section class="px-10 py-5 border-y border-white/10 flex flex-col md:flex-row justify-between gap-4">
+    <div class="flex flex-wrap gap-2 items-center">
+      <span class="text-[0.7rem] opacity-50 uppercase tracking-widest">Filter:</span>
+      <span class="bg-white text-black px-5 py-2 rounded-full text-sm font-bold">All Products</span>
+      <span class="bg-[#1e1e1e] border border-white/10 px-5 py-2 rounded-full text-sm">Audio</span>
+      <span class="bg-[#1e1e1e] border border-white/10 px-5 py-2 rounded-full text-sm">Wearables</span>
+      <span class="bg-[#1e1e1e] border border-white/10 px-5 py-2 rounded-full text-sm">Computing</span>
+      <span class="bg-[#1e1e1e] border border-white/10 px-5 py-2 rounded-full text-sm">Under 50K</span>
+    </div>
+    <div class="flex gap-2 items-center">
+      <span class="text-[0.7rem] opacity-50 uppercase tracking-widest">Sort:</span>
+      <span class="bg-[#1e1e1e] border border-white/10 px-4 py-2 rounded-full text-sm">Price: Low to High ▼</span>
+      <span class="bg-[#1e1e1e] border border-white/10 px-4 py-2 rounded-full text-sm">Top Rated</span>
+    </div>
+  </section>
 
-      <!-- PRODUCT 4 -->
-      <a
-        href="#m4"
-        class="bg-[#1a1a1a] rounded-[20px] p-3 border border-white/5"
-        ><img
-          src="images/phone.jpg"
-          class="w-full h-64 object-cover rounded-[14px]"
-        />
-        <div class="p-3">
-          <h2 class="font-bold">Samsung A75</h2>
-          <p class="text-sm text-neutral-400 mt-1">AMOLED • 5000mAh</p>
-          <div class="flex justify-between mt-3">
-            <span class="font-bold">30,000KSH</span
-            ><span class="text-xs bg-white text-black px-3 py-1 rounded-full"
-              >4.6 &#9733;&#9733;&#9733;&#9733;&#9734;</span
-            >
-          </div>
-        </div></a
-      >
+  <!-- PRODUCT GRID - CSS Grid with hover effects -->
+  <main id="grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-10">
+    <a href="#m1" class="card group"><img src="images/headphones.jpg" alt="Studio Pro Headphones" loading="lazy"><div class="p-3"><h2>Studio Pro Headphones</h2><p class="meta">Noise Cancelling • 40hr</p><div class="row"><span class="price">20,000KSH</span><span class="rating">4.9 ★★★★★</span></div><button>Add to Cart</button></div></a>
+    <a href="#m2" class="card group"><img src="images/watch.jpg" alt="Digital Watch Series" loading="lazy"><div class="p-3"><h2>Digital Watch Series</h2><p class="meta">Fitness • 7 Day Battery</p><div class="row"><span class="price">15,000KSH</span><span class="rating">4.7 ★★★★☆</span></div><button>Add to Cart</button></div></a>
+    <a href="#m3" class="card group"><img src="images/laptop.jpg" alt="Hp Elitebook 840" loading="lazy"><div class="p-3"><h2>Hp Elitebook 840</h2><p class="meta">i7 • 16GB • 512GB SSD</p><div class="row"><span class="price">65,000KSH</span><span class="rating">4.8 ★★★★★</span></div><button>Add to Cart</button></div></a>
+    <a href="#m4" class="card group"><img src="images/phone.jpg" alt="Samsung A75" loading="lazy"><div class="p-3"><h2>Samsung A75</h2><p class="meta">AMOLED • 5000mAh</p><div class="row"><span class="price">30,000KSH</span><span class="rating">4.6 ★★★★☆</span></div><button>Add to Cart</button></div></a>
+    <a href="#m5" class="card group"><img src="images/camera.webp" alt="NOVA X100" loading="lazy"><div class="p-3"><h2>NOVA X100</h2><p class="meta">4K • Pro Lens Kit</p><div class="row"><span class="price">85,000KSH</span><span class="rating">4.9 ★★★★★</span></div><button>Add to Cart</button></div></a>
+    <a href="#m6" class="card group"><img src="images/speaker.jpg" alt="W-KING Sound" loading="lazy"><div class="p-3"><h2>W-KING Sound</h2><p class="meta">120W • 24hr Playtime</p><div class="row"><span class="price">75,000KSH</span><span class="rating">4.7 ★★★★☆</span></div><button>Add to Cart</button></div></a>
+    <a href="#m7" class="card group"><img src="images/drone.jpg" alt="Sky Drone 4K" loading="lazy"><div class="p-3"><h2>Sky Drone 4K</h2><p class="meta">30min Flight • 4K Cam</p><div class="row"><span class="price">104,000KSH</span><span class="rating">4.4 ★★★☆☆</span></div><button>Add to Cart</button></div></a>
+  </main>
 
-      <!-- PRODUCT 5 -->
-      <a
-        href="#m5"
-        class="bg-[#1a1a1a] rounded-[20px] p-3 border border-white/5"
-        ><img
-          src="images/camera.webp"
-          class="w-full h-64 object-cover rounded-[14px]"
-        />
-        <div class="p-3">
-          <h2 class="font-bold">NOVA X100</h2>
-          <p class="text-sm text-neutral-400 mt-1">4K • Pro Lens Kit</p>
-          <div class="flex justify-between mt-3">
-            <span class="font-bold">85,000KSH</span
-            ><span class="text-xs bg-white text-black px-3 py-1 rounded-full"
-              >4.9 &#9733;&#9733;&#9733;&#9733;&#9733;</span
-            >
-          </div>
-        </div></a
-      >
+  <!-- MODALS - 7 Product detail modals -->
+  <div id="m1" class="modal"><div class="glass modal-box"><a href="#grid" class="close">✕</a><img src="images/headphones.jpg" alt="Headphones"><div><h2>Studio Pro Headphones</h2><p class="price">20,000KSH</p><p class="desc">Premium over-ear with active noise cancellation, 40hr battery, studio-grade drivers.</p><button>Add to Cart — 20,000KSH</button></div></div></div>
+  <div id="m2" class="modal"><div class="glass modal-box"><a href="#grid" class="close">✕</a><img src="images/watch.jpg" alt="Watch"><div><h2>Digital Watch Series</h2><p class="price">15,000KSH</p><p class="desc">Smart fitness tracking, heart rate, 7-day battery, 5ATM water resistant.</p><button>Add to Cart — 15,000KSH</button></div></div></div>
+  <div id="m3" class="modal"><div class="glass modal-box"><a href="#grid" class="close">✕</a><img src="images/laptop.jpg" alt="Laptop"><div><h2>Hp Elitebook 840</h2><p class="price">65,000KSH</p><p class="desc">Intel Core i7, 16GB RAM, 512GB SSD. Business-grade.</p><button>Add to Cart — 65,000KSH</button></div></div></div>
+  <div id="m4" class="modal"><div class="glass modal-box"><a href="#grid" class="close">✕</a><img src="images/phone.jpg" alt="Phone"><div><h2>Samsung A75</h2><p class="price">30,000KSH</p><p class="desc">120Hz AMOLED, 5000mAh, 108MP camera.</p><button>Add to Cart — 30,000KSH</button></div></div></div>
+  <div id="m5" class="modal"><div class="glass modal-box"><a href="#grid" class="close">✕</a><img src="images/camera.webp" alt="Camera"><div><h2>NOVA X100</h2><p class="price">85,000KSH</p><p class="desc">4K camera with professional lens kit.</p><button>Add to Cart — 85,000KSH</button></div></div></div>
+  <div id="m6" class="modal"><div class="glass modal-box"><a href="#grid" class="close">✕</a><img src="images/speaker.jpg" alt="Speaker"><div><h2>W-KING Sound System</h2><p class="price">75,000KSH</p><p class="desc">Portable 120W sound box with 24hr playtime.</p><button>Add to Cart — 75,000KSH</button></div></div></div>
+  <div id="m7" class="modal"><div class="glass modal-box"><a href="#grid" class="close">✕</a><img src="images/drone.jpg" alt="Drone"><div><h2>Sky Drone 4K</h2><p class="price">104,000KSH</p><p class="desc">4K drone, 30min flight, obstacle avoidance.</p><button>Add to Cart — 104,000KSH</button></div></div></div>
 
-      <!-- PRODUCT 6 -->
-      <a
-        href="#m6"
-        class="bg-[#1a1a1a] rounded-[20px] p-3 border border-white/5"
-        ><img
-          src="images/speaker.jpg"
-          class="w-full h-64 object-cover rounded-[14px]"
-        />
-        <div class="p-3">
-          <h2 class="font-bold">W-KING Sound</h2>
-          <p class="text-sm text-neutral-400 mt-1">120W • 24hr Playtime</p>
-          <div class="flex justify-between mt-3">
-            <span class="font-bold">75,000KSH</span
-            ><span class="text-xs bg-white text-black px-3 py-1 rounded-full"
-              >4.7 &#9733;&#9733;&#9733;&#9733;&#9734;</span
-            >
-          </div>
-        </div></a
-      >
-      <!-- PRODUCT 7 -->
-      <a
-        href="#m7"
-        class="bg-[#1a1a1a] rounded-[20px] p-3 border border-white/5"
-        ><img
-          src="images/drone.jpg"
-          class="w-full h-64 object-cover rounded-[14px]"
-        />
-        <div class="p-3">
-          <h2 class="font-bold">Sky Drone 4K</h2>
-          <p class="text-sm text-neutral-400 mt-1">30min Flight • 4K Cam</p>
-          <div class="flex justify-between mt-3">
-            <span class="font-bold">104,000KSH</span
-            ><span class="text-xs bg-white text-black px-3 py-1 rounded-full"
-              >4.4 &#9733;&#9733;&#9733;&#9733;&#9734;</span
-            >
-          </div>
-        </div></a
-      >
-    </main>
-    <!-- MODAL - (Product Detail) -->
-     <div id="m1" class="modal fixed inset-0 bg-black/60 backdrop-blur-sm z-50 items-center justify-center p-4">
-  <div class="glass bg-[#181818]/90 max-w-4xl w-full rounded-[24px] grid md:grid-cols-2 p-6 gap-6 relative">
-    <a href="#grid" class="absolute top-4 right-4 bg-white text-black w-8 h-8 grid place-items-center rounded-full">✕</a>
-    <img src="images/headphones.jpg" class="rounded-xl h-80 w-full object-cover"/>
-    <div class="flex flex-col justify-center"><h2 class="text-3xl font-black">Studio Pro Headphones</h2><p class="text-blue-400 text-xl mt-2">20,000KSH</p><p class="text-neutral-400 mt-4 text-sm leading-relaxed">Premium over-ear headphones with active noise cancellation, 40hr battery and studio-grade drivers.</p><div class="mt-6 flex gap-3"><button class="flex-1 bg-white text-black py-3 rounded-full font-bold">Add to Cart</button><a href="#grid" class="flex-1 bg-white/10 py-3 rounded-full text-center">Close</a></div></div>
+  <!-- CART SIDEBAR - Static only -->
+  <div id="cart" class="cart">
+    <div class="glass cart-head"><h2>Your Cart</h2><a href="#grid" class="close">✕</a></div>
+    <div class="cart-body">
+      <div class="cart-item"><img src="images/headphones.jpg" alt=""><div><h4>Studio Pro Headphones</h4><p>20,000KSH x 1</p></div><span>Remove</span></div>
+      <div class="cart-item"><img src="images/watch.jpg" alt=""><div><h4>Digital Watch</h4><p>15,000KSH x 1</p></div><span>Remove</span></div>
+    </div>
+    <div class="cart-foot"><div><span>Total</span><span>35,000KSH</span></div><a href="#grid">Checkout (Static)</a></div>
   </div>
-<!-- CART SIDEBAR - Glass header, solid body, static only -->
-<div id="cart" class="fixed top-0 right-0 w-full md:w-[380px] h-full bg-[#161616] border-l border-white/10 z-50 flex flex-col">
-  <div class="glass p-6 flex justify-between items-center"><h2 class="font-bold">Your Cart</h2><a href="#grid" class="w-8 h-8 bg-white text-black grid place-items-center rounded-full">✕</a></div>
-  <div class="flex-1 p-6 space-y-3 overflow-auto">
-    <div class="bg-[#1e1e1e] p-3 rounded-xl flex gap-3"><img src="images/headphones.jpg" class="w-16 h-16 rounded-lg object-cover"/><div><p class="text-sm font-bold">Studio Pro Headphones</p><p class="text-xs text-neutral-400">20,000KSH x 1</p></div><span class="ml-auto text-xs text-red-400">Remove</span></div>
-    <div class="bg-[#1e1e1e] p-3 rounded-xl flex gap-3"><img src="images/watch.jpg" class="w-16 h-16 rounded-lg object-cover"/><div><p class="text-sm font-bold">Digital Watch</p><p class="text-xs text-neutral-400">15,000KSH x 1</p></div><span class="ml-auto text-xs text-red-400">Remove</span></div>
-  </div>
-  <div class="p-6 border-t border-white/10"><div class="flex justify-between mb-4 font-bold"><span>Total</span><span class="text-blue-400">35,000KSH</span></div><a href="#grid" class="block text-center w-full bg-white text-black py-3 rounded-full font-bold">Checkout (Static)</a></div>
-</div>
 
-  </body>
+  <!-- FOOTER -->
+  <footer class="mt-20 border-t border-white/10 px-10 py-10 flex flex-col md:flex-row justify-between gap-6">
+    <div><h3 class="font-black text-xl">MWONGE <span class="text-blue-500">.</span></h3><p class="text-sm text-neutral-500 mt-2 max-w-xs">Your trusted electronics store in Kenya. Quality gadgets, fair prices.</p></div>
+    <div class="flex gap-6 text-sm text-neutral-400"><a href="#" class="hover:text-white">Instagram</a><a href="#" class="hover:text-white">Facebook</a><a href="#" class="hover:text-white">X</a><a href="#" class="hover:text-white">WhatsApp</a></div>
+    <p class="text-sm text-neutral-600">&copy; 2026 Mwonge Electronics. All Rights Reserved.</p>
+  </footer>
+</body>
 </html>
