@@ -7,8 +7,28 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      .glass {
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .modal {
+        display: none;
+      }
+      .modal:target {
+        display: flex;
+      }
+      #cart {
+        transform: translateX(100%);
+        transition: 0.3s ease;
+      }
+      #cart:target {
+        transform: translateX(0);
+      }
+    </style>
   </head>
-  <body>
+  <body class="bg-">
     <!-- NAV - Flex layout -->
     <nav class="glass nav">
       <div class="logo">MWONGE <span>.</span></div>
@@ -107,15 +127,16 @@
         <button>Add to Cart</button>
       </a>
       <!-- PRODUCT 7 -->
-       <a href="#m7" class="card glass">
+      <a href="#m7" class="card glass">
         <div class="img-wrap">
-          <img src="images/drone.jpg" alt="SuperSonic Drone" width="250px">
+          <img src="images/drone.jpg" alt="SuperSonic Drone" width="250px" />
         </div>
         <h2>Sky Drone 4K</h2>
         <div class="price">104,000KSH</div>
-        <div class="rating">&#9733;&#9733;&#9733;&#9734;&#9734; 4.4 (78) </div>
+        <div class="rating">&#9733;&#9733;&#9733;&#9734;&#9734; 4.4 (78)</div>
         <button>Add to Cart</button>
-       </a>
+      </a>
     </main>
+    <!-- MODAL - (Product Detail) -->
   </body>
 </html>
