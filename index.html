@@ -12,6 +12,15 @@
     />
   </head>
   <body class="bg-[#111111] text-white">
+    >
+    <!-- HIDDEN RADIOS  -->
+    <input type="radio" name="filter" id="f-all" checked class="hidden" />
+    <input type="radio" name="filter" id="f-audio" class="hidden" />
+    <input type="radio" name="filter" id="f-wearable" class="hidden" />
+    <input type="radio" name="filter" id="f-computing" class="hidden" />
+    <input type="radio" name="filter" id="f-mobile" class="hidden" />
+    <input type="radio" name="filter" id="f-camera" class="hidden" />
+    <input type="radio" name="filter" id="f-under50" class="hidden" />
     <!-- NAV - Flex layout, glass as secondary theme -->
     <nav
       class="glass sticky top-0 z-30 flex justify-between items-center px-8 py-4 m-4 rounded-full"
@@ -44,32 +53,48 @@
     </header>
 
     <!-- FILTER / SORT UI - UI ONLY -->
+
     <section
       class="px-10 py-5 border-y border-white/10 flex flex-col md:flex-row justify-between gap-4"
     >
       <div class="flex flex-wrap gap-2 items-center">
-        <span class="text-[0.7rem] opacity-50 uppercase tracking-widest"
+        <span class="text-[0.7rem] opacity-50 uppercase tracking-widest mr-1"
           >Filter:</span
         >
-        <span
-          class="bg-white text-black px-5 py-2 rounded-full text-sm font-bold"
-          >All Products</span
+        <label
+          for="f-all"
+          class="chip cursor-pointer bg-white text-black px-5 py-2 rounded-full text-sm font-bold"
+          >All</label
         >
-        <span
-          class="bg-[#1e1e1e] border border-white/10 px-5 py-2 rounded-full text-sm"
-          >Audio</span
+        <label
+          for="f-audio"
+          class="chip cursor-pointer bg-[#1e1e1e] border border-white/10 px-5 py-2 rounded-full text-sm"
+          >Audio</label
         >
-        <span
-          class="bg-[#1e1e1e] border border-white/10 px-5 py-2 rounded-full text-sm"
-          >Wearables</span
+        <label
+          for="f-wearable"
+          class="chip cursor-pointer bg-[#1e1e1e] border border-white/10 px-5 py-2 rounded-full text-sm"
+          >Wearables</label
         >
-        <span
-          class="bg-[#1e1e1e] border border-white/10 px-5 py-2 rounded-full text-sm"
-          >Computing</span
+        <label
+          for="f-computing"
+          class="chip cursor-pointer bg-[#1e1e1e] border border-white/10 px-5 py-2 rounded-full text-sm"
+          >Computing</label
         >
-        <span
-          class="bg-[#1e1e1e] border border-white/10 px-5 py-2 rounded-full text-sm"
-          >Under 50K</span
+        <label
+          for="f-mobile"
+          class="chip cursor-pointer bg-[#1e1e1e] border border-white/10 px-5 py-2 rounded-full text-sm"
+          >Mobile</label
+        >
+        <label
+          for="f-camera"
+          class="chip cursor-pointer bg-[#1e1e1e] border border-white/10 px-5 py-2 rounded-full text-sm"
+          >Camera</label
+        >
+        <label
+          for="f-under50"
+          class="chip cursor-pointer bg-[#1e1e1e] border border-white/10 px-5 py-2 rounded-full text-sm"
+          >Under 50K</label
         >
       </div>
       <div class="flex gap-2 items-center">
@@ -78,21 +103,16 @@
         >
         <span
           class="bg-[#1e1e1e] border border-white/10 px-4 py-2 rounded-full text-sm"
-          >Price: Low to High ▼</span
-        >
-        <span
-          class="bg-[#1e1e1e] border border-white/10 px-4 py-2 rounded-full text-sm"
-          >Top Rated</span
+          >Price: Low to High ▼ (UI Only)</span
         >
       </div>
     </section>
-
     <!-- PRODUCT GRID - CSS Grid with hover effects -->
     <main
       id="grid"
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-10"
     >
-      <a href="#m1" class="card group"
+      <a href="#m1" class="card group" data-cat="audio" data-price="20,000KSH"
         ><img
           src="images/headphones.jpg"
           alt="Studio Pro Headphones"
@@ -108,7 +128,11 @@
           <button>Add to Cart</button>
         </div></a
       >
-      <a href="#m2" class="card group"
+      <a
+        href="#m2"
+        class="card group"
+        data-cat="wearable"
+        data-price="15,000KSH"
         ><img
           src="images/watch.jpg"
           alt="Digital Watch Series"
@@ -124,7 +148,11 @@
           <button>Add to Cart</button>
         </div></a
       >
-      <a href="#m3" class="card group"
+      <a
+        href="#m3"
+        class="card group"
+        data-cat="computing"
+        data-price="65,000KSH"
         ><img src="images/laptop.jpg" alt="Hp Elitebook 840" loading="lazy" />
         <div class="p-3">
           <h2>Hp Elitebook 840</h2>
@@ -136,7 +164,7 @@
           <button>Add to Cart</button>
         </div></a
       >
-      <a href="#m4" class="card group"
+      <a href="#m4" class="card group" data-cat="mobile" data-price="30,000KSH"
         ><img src="images/phone.jpg" alt="Samsung A75" loading="lazy" />
         <div class="p-3">
           <h2>Samsung A75</h2>
@@ -148,7 +176,7 @@
           <button>Add to Cart</button>
         </div></a
       >
-      <a href="#m5" class="card group"
+      <a href="#m5" class="card group" data-cat="camera" data-price="85,000KSH"
         ><img src="images/camera.webp" alt="NOVA X100" loading="lazy" />
         <div class="p-3">
           <h2>NOVA X100</h2>
@@ -160,7 +188,7 @@
           <button>Add to Cart</button>
         </div></a
       >
-      <a href="#m6" class="card group"
+      <a href="#m6" class="card group" data-cat="audio" data-price="75,000KSH"
         ><img src="images/speaker.jpg" alt="W-KING Sound" loading="lazy" />
         <div class="p-3">
           <h2>W-KING Sound</h2>
@@ -172,7 +200,7 @@
           <button>Add to Cart</button>
         </div></a
       >
-      <a href="#m7" class="card group"
+      <a href="#m7" class="card group" data-cat="camera" data-price="104,000KSH"
         ><img src="images/drone.jpg" alt="Sky Drone 4K" loading="lazy" />
         <div class="p-3">
           <h2>Sky Drone 4K</h2>
