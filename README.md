@@ -13,7 +13,7 @@ Glass class as secondary theme. .card, .card-body.
 - CSS Grid: supported
 - backdrop-filter: -webkit- prefix added for Safari
 - modal/cart: works all browsers
-- clamp()
+
 
 ## Features
 7 products, grid hover lift, 7 modals, static cart sidebar, filter/sort UI only, print stylesheet, dark mode via prefers-color-scheme, custom properties.
